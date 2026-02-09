@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sect of Readers | Global Hub</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-database-compat.js"></script>
+</head>
+<body>
+
+<header>
+    <div class="overlay">
+        <h1>Sect of Readers</h1>
+        <p>A Biblioteca Celestial dos Mundos de Cultivação</p>
+    </div>
+</header>
+
+<nav id="filter-nav">
+    <button onclick="filterBooks('all')">Todas as Obras</button>
+    <button onclick="filterBooks('Tang Jia San Shao')">Tang Jia San Shao</button>
+    <button onclick="filterBooks('Tian Can Tu Dou')">Tian Can Tu Dou</button>
+    <button onclick="filterBooks('Outros')">Outros Mestres</button>
+</nav>
+
+<main>
+    <div id="book-grid" class="grid-container"></div>
+
+    <section class="discussion-section">
+        <div class="section-header">
+            <h2>Mural de Discussão Global</h2>
+            <p>Sintonize sua energia com outros leitores.</p>
+        </div>
+
+        <form id="comment-form">
+            <div class="input-group">
+                <input type="text" id="user-name" placeholder="Seu apelido na seita" required>
+                <select id="user-rating">
+                    <option value="5">⭐⭐⭐⭐⭐ (Divino)</option>
+                    <option value="4">⭐⭐⭐⭐ (Excelente)</option>
+                    <option value="3">⭐⭐⭐ (Bom)</option>
+                    <option value="2">⭐⭐ (Regular)</option>
+                    <option value="1">⭐ (Iniciante)</option>
+                </select>
+            </div>
+            <textarea id="user-comment" placeholder="Compartilhe sua sabedoria..." required></textarea>
+            <button type="submit" id="btn-submit">Publicar no Mural</button>
+        </form>
+
+        <div id="comments-display" class="comments-list">
+            <p class="loading">Buscando pergaminhos no banco de dados...</p>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <p>&copy; 2026 Sect of Readers - Caminho da Imortalidade</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
